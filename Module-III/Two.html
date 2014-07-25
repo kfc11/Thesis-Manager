@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+<head>
+<title>KevinCandava</title>
+</head>
+		<body background="http://radiomojarra.com/wp-content/uploads/2014/01/black-background-wood.jpg" style="; font-family: arial; font-size: 13px; color: #F2F2F2">
+
+		<center>
+		<br>
+		<hr style="height:3px;background-color:white;" width="80%">
+		<div style="float:left; margin-left: 10%;margin-right: 5px">
+		<br>
+		<br>
+		<img src="https://scontent-a-lax.xx.fbcdn.net/hphotos-xpf1/t1.0-9/10419560_10201334192631763_7071918653032911002_n.jpg"style="background:white; width:110px; padding:0px; border:5px solid #cacaca;height:150px;z-
+		index:99999;">
+		<br><h1>Kevin L. Candava</h1></div>
+				</center>
+				<div style="margin-right:320px">
+				<br>
+				<br>
+				<p><b>ABOUT ME:</b>
+				<p>Olah Amigos and Amigas.<br>I am a college student in Polytechnic University of the Philippines. I am on my fifth year in taking the course of Bachelor of Science in Computer Engineering. I am a happy go lucky person. I like sweet and cute things. My pastimes are reading mangas and watching animes. <br></p>
+			
+				<br><b><i>"The things you see aren't always real"</b></i>
+				</div>
+
+<br>
+<hr style="height:3px;background-color:white;" width="80%">
+<center>
+<p><b>CONTACTS:</b>
+<p><i>Contact Number: (+63)9263135203<br>Email Address: candava.kevin@yahoo.com</br></i>
+
+<br><b><i>Other Contacts</b></i>
+<p><a href="https://www.facebook.com/kevintamad"><img src = "http://www.underconsideration.com/brandnew/archives/facebook_logo_detail.gif" width=90px height=90px 
+
+align="center"></a>
+<a href="https://plus.google.com/u/0/106971366484338725049/posts"><img src = "http://transcript-bg.com/images/google+.png" width=90px height=90px 
+
+align="center"></a>
+<a href="http://www.codecademy.com/kfc_xi"><img src = "http://cdn-production.codecademy.com/assets/logo/logo--grey-498acc77555893fa7740135d429f628e.svg" width=100px height=100px align="center"></a>
+<hr style="height:3px;background-color:white;" width="45%">
+
+
+   {% for greeting in greetings %}
+      {% if greeting.author %}
+        <b>{{ greeting.author.nickname() }}</b> wrote:
+      {% else %}
+       An anonymous person wrote:
+      {% endif %}
+      <blockquote>{{ greeting.content }}</blockquote>
+    {% endfor %}
+
+	    <form action="/sign2?guestbook_name={{ guestbook_name }}" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Sign Guestbook"></div>
+    </form>
+	
+	<hr>
+</body>
+</html>
+{% endautoescape %}
