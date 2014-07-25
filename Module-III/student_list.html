@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>Student Records</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body background="http://p1.pichost.me/i/58/1822854.jpg">
+    <div id='cssmenu'>
+        <ul>
+            <li><a href="/"><span>Home</span></a></li>
+            <li class='active has-sub'><a href='#'><span>Student</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/student/new"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/student/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+            <li class='active has-sub'><a href='#'><span>Thesis</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/thesis/new"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/thesis/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+            <li class='active has-sub'><a href='#'><span>Adviser</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/adviser/new"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/adviser/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+            <li class='active has-sub'><a href='#'><span>Developer' Profile</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/module-1/1"><span>Herson Villegas</span></a></li>
+                    <li class='has-sub'><a href="/module-1/2"><span>Kevin Candava</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <center>
+    <h1>List of Students</h1>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="6" id="th1">Complete List of All Enrolled Students</th>
+            </tr>
+            <tr>
+                <th id="th2">Student_Number</th>
+                <th id="th2">Department</th>
+                <th id="th2">First Name</th>
+                <th id="th2">Last Name</th>
+                <th id="th2">Email</th>
+            </tr>
+        </thead>
+    
+
+        <tbody>
+            {% for t in all_students %}
+            <tr>
+                <td id="th2">{{t.student_number}}</td>
+                <td id="th2">{{t.department}}</td>
+                <td id="th2">{{t.first_name}}</td>
+                <td id="th2">{{t.last_name}}</td>
+                <td id="th2">{{t.email}}</td> 
+                <td id="th2"><a href="/student/view/{{t.key.id()}}"> View </a> </td>
+
+            </tr>
+            {% endfor %}
+           </tbody>
+    </table>
+    
+     </center>   
+     
+    
+    <a href="/student/new" id="th2"> Create New Students</a>
+    
+</body>
+</html>
