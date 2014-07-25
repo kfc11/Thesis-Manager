@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Information</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body background="http://p1.pichost.me/i/58/1822854.jpg">
+ <div id='cssmenu'>
+        <ul>
+            <li><a href="/"><span>Home</span></a></li>
+            <li class='active has-sub'><a href='#'><span>Student</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/student/new"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/student/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+            <li class='active has-sub'><a href='#'><span>Thesis</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/thesis/new"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/thesis/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+            <li class='active has-sub'><a href='#'><span>Adviser</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/adviser/new"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/adviser/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+            <li class='active has-sub'><a href='#'><span>Developer' Profile</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/module-1/1"><span>Herson Villegas</span></a></li>
+                    <li class='has-sub'><a href="/module-1/2"><span>Kevin Candava</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <center>
+        <h1>Student Information</h1>
+    <br>
+    
+    {% for t in all_students %}
+    {% if t.key.id()==id %}
+        <h2 class="design">Name</h2>
+        <p class="design2">{{t.first_name}}
+        {{t.last_name}}</p>
+        <h3 class="design">Department</h3> 
+        <p class="design2">{{t.department}}</p>
+        <h3 class="design">Student Number</h3>
+        <p class="design2">{{t.student_number}}</p>
+        <h3 class="design">Email</h3>
+        <p class="design2">{{t.email}}</p>
+        <h3 class="design">Remarks</h3>
+        <p class="design2">{{t.remarks}}</p>
+      
+    
+    </center>
+    <a href="/student/list" id="th2">Go Back</a>
+    <a href="/student/edit/{{t.key.id()}}" id="th2">Edit</a>        
+
+    {% endif %}          
+    {% endfor %}
+
+</body>
+</html>
