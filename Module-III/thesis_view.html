@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thesis Information</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+<body background="http://p1.pichost.me/i/58/1822854.jpg" style="; font-family: arial; font-size: 20px; color: #F2F2F2">
+ <div id='cssmenu'>
+        <ul>
+            <li><a href="/"><span>Home</span></a></li>
+            <li class='active has-sub'><a href='#'><span>Student</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/student/new"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/student/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+            <li class='active has-sub'><a href='#'><span>Thesis</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/thesis/new"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/thesis/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+            <li class='active has-sub'><a href='#'><span>Adviser</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/adviser/new"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/adviser/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+            <li class='active has-sub'><a href='#'><span>Developer' Profile</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/module-1/1"><span>Herson Villegas</span></a></li>
+                    <li class='has-sub'><a href="/module-1/2"><span>Kevin Candava</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+	<center>
+        <h1>Thesis Information</h1><br>
+    {% for t in thesisquery %}
+    {% if t.key.id()==id %}
+        <h3 class="design">Title</h3> 
+        <p class="design2"> {{t.Thesis_title}}</p>
+        <h3 class="design">Year</h3>
+        <p class="design2">  {{t.schoolyear}}</p>  
+        <h3 class="design">Status</h3> 
+        <p class="design2">{{t.status}}</p>      
+        <h3 class="design">Description</h3>   
+        <p class="design2">{{t.description}}</p>     
+              
+        
+     </center>       
+    <a href="/thesis/list" id="th2">Go Back</a>
+    <a href="/thesis/edit/{{t.key.id()}}" id="th2">Edit</a>   
+
+    {% endif %}           
+    {% endfor %}    
+    
+
+</body>
+</html>
